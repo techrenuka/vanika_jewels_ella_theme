@@ -6,7 +6,7 @@
         "15d9d2f4-1bdd-49c8-9a99-58246020f05c": {
           "type": "paragraph",
           "settings": {
-            "title": "Pre Sale Questions",
+            "title": "",
             "question_1": "Q: What type of silver is used in your jewelry?",
             "answer_1": "<p>We use sterling silver for our jewelry, which is 92.5% pure silver alloyed with other metals for strength and durability.<\/p>",
             "question_2": "Q: Are your diamonds conflict-free?",
@@ -69,7 +69,7 @@
         "contact_color_bg": "#a1decd",
         "contact_color_bg_gradient": "",
         "contact_color_hover": "#ffffff",
-        "contact_color_border_hover": "#FFFFFF",
+        "contact_color_border_hover": "#ffffff",
         "contact_color_bg_hover": "#000000",
         "contact_color_bg_gradient_hover": ""
       }
