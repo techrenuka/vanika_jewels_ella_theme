@@ -66,7 +66,7 @@
         "contact_color_bg_gradient": "",
         "contact_color_hover": "#ffffff",
         "contact_color_border_hover": "#000000",
-        "contact_color_bg_hover": "#e93d29",
+        "contact_color_bg_hover": "#000000",
         "contact_color_bg_gradient_hover": ""
       }
     }
