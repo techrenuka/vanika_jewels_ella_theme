@@ -65,11 +65,11 @@
         "contact_text": "Contact Support",
         "contact_link": "shopify:\/\/pages\/contact",
         "contact_color": "#000000",
-        "contact_color_border": "#000000",
+        "contact_color_border": "#a1decd",
         "contact_color_bg": "#a1decd",
         "contact_color_bg_gradient": "",
         "contact_color_hover": "#ffffff",
-        "contact_color_border_hover": "#000000",
+        "contact_color_border_hover": "#FFFFFF",
         "contact_color_bg_hover": "#000000",
         "contact_color_bg_gradient_hover": ""
       }
