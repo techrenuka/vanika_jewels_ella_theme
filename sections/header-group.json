@@ -28,12 +28,21 @@
             "color": "#ffffff",
             "color_mb": "#ffffff"
           }
+        },
+        "marquee_PkFW6B": {
+          "type": "marquee",
+          "settings": {
+            "text": "<p>Watch Wonderland: 10% Discount - Use <strong>Save10<\/strong> Code<\/p>",
+            "color": "#000000",
+            "color_mb": "#000000"
+          }
         }
       },
       "block_order": [
         "marquee_ijqDV4",
         "marquee_6r7GAh",
-        "marquee_aCADQU"
+        "marquee_aCADQU",
+        "marquee_PkFW6B"
       ],
       "settings": {
         "mq_background": "#000000",
