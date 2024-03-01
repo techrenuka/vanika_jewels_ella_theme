@@ -33,8 +33,8 @@
           "type": "marquee",
           "settings": {
             "text": "<p>Watch Wonderland: 10% Discount - Use <strong>Save10<\/strong> Code<\/p>",
-            "color": "#000000",
-            "color_mb": "#000000"
+            "color": "#f8f8f8",
+            "color_mb": "#f8f8f8"
           }
         }
       },
