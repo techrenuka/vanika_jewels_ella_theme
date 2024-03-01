@@ -33,7 +33,7 @@
           "type": "marquee",
           "settings": {
             "text": "<p>Time's ticking! Enjoy 10% off on all watches now with code <strong>Save10<\/strong>. Hurry, this offer won't last long!<\/p>",
-            "color": "#f8f8f8",
+            "color": "#ff8b21",
             "color_mb": "#f8f8f8"
           }
         }
