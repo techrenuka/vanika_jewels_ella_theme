@@ -603,12 +603,6 @@
 
     ],
     "blocks": {
-      "1804893150726543839": {
-        "type": "shopify:\/\/apps\/nova-multi-currency-converter\/blocks\/app-embed\/a5be3c35-cbd0-46a1-ac3a-1ace57a9c1ce",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "6615124273980966592": {
         "type": "shopify:\/\/apps\/avada-helpdesk-faq\/blocks\/app-embed\/1c0e135d-e8e1-4fe2-86be-1c36def46675",
         "disabled": true,
@@ -627,6 +621,12 @@
           "button_horizontal_position": "bottom_right",
           "button_vertical_position": "lowest",
           "greeting_message": ""
+        }
+      },
+      "1804893150726543839": {
+        "type": "shopify:\/\/apps\/nova-multi-currency-converter\/blocks\/app-embed\/a5be3c35-cbd0-46a1-ac3a-1ace57a9c1ce",
+        "disabled": true,
+        "settings": {
         }
       }
     }
