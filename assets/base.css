@@ -6737,3 +6737,15 @@ summary::-webkit-details-marker {
         transition: none !important;
     }
 }
+
+.product-desc-details table tbody tr td{
+      /* width: 50%; */
+      font-size: 20px;
+      line-height: 17px;
+      color: #2B2B2B;
+      padding: 25px 3px;
+      border-bottom: 1px solid black;
+      font-weight: 600;
+      font-family: 'Jost';
+      background:white;
+}
