@@ -78,7 +78,7 @@
             "heading": "Featured Products",
             "product_block_collection": "exclusive-collection",
             "product_block_layout": "slider",
-            "product_block_limit": 3,
+            "product_block_limit": 4,
             "product_block_dots": false,
             "product_block_arrows": true
           }
@@ -128,7 +128,7 @@
       "settings": {
         "colors_bg": "rgba(0,0,0,0)",
         "colors_bg_gradient": "",
-        "container": "fullwidth",
+        "container": "1770",
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
         "mg_top_mobile": 0,
@@ -158,7 +158,7 @@
         "show_sorting": true,
         "show_item_per_page": true,
         "show_view_as": true,
-        "products_per_page": "20",
+        "products_per_page": "50",
         "layout": "3",
         "show_infinite_scrolling": "show_more",
         "show_banner": false,
