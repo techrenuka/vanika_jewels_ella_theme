@@ -345,7 +345,7 @@
             "button_background_2_gradient": "",
             "button_color_hover_2": "#ffffff",
             "button_border_hover_2": "#232323",
-            "button_background_hover_2": "#ff8b21",
+            "button_background_hover_2": "#232323",
             "button_background_gradient_hover_2": "",
             "video_link": "",
             "adaptive_height_video": "56",
@@ -364,7 +364,7 @@
         "large_img_9gftjh"
       ],
       "custom_css": [
-        ".banner-button .button {--button_color_hover: #232323; --button_bg_hover: #ffffff;}"
+
       ],
       "settings": {
         "id_section": "",
