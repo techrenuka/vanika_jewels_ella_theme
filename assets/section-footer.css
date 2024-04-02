@@ -41,7 +41,7 @@
 
 .footer-block__newsletter .footer-block__newsletter-form {
     padding: 0;
-    width: 100%;
+    width: 50%;
     max-width: 420px;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .footer-block__list-social {
-    margin-top: var(--margin-top);
+    margin-top: 15px;;
 }
 
 .column_reverse .footer-block__list-social {
@@ -139,6 +139,7 @@
 
 .footer-block__details {
     margin-top: 3px;
+    font-size: 14px;
 }
 
 .footer-block__details .image_logo {

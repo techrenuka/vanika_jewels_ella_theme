@@ -168,45 +168,61 @@
           >
             <!-- Product Details -->
             <div class="product-desc-details">
-              {% if product %}
+              {% if product.metafields %}
                 <table role="presentation" width="50%" border="0" cellspacing="0" cellpadding="0">
                   <tbody>
-                    <tr>
-                      <td>Gender</td>
-                      <td>{{ product.metafields['mm-google-shopping'].gender }}</td>
-                    </tr>
-                    <tr>
-                      <td>Material Total Weight (in grams)</td>
-                      <td>{{ product.metafields.custom.material_total_weight }}</td>
-                    </tr>
+                    {% if product.metafields['mm-google-shopping'].gender %}
+                      <tr>
+                        <td>Gender</td>
+                        <td>{{ product.metafields['mm-google-shopping'].gender }}</td>
+                      </tr>
+                    {% endif %}
+                    {% if product.metafields.custom.material_total_weight %}
+                      <tr>
+                        <td>Material Total Weight (in grams)</td>
+                        <td>{{ product.metafields.custom.material_total_weight }}</td>
+                      </tr>
+                    {% endif %}
                     <tr>
                       <td>Rhodium Plated</td>
                       <td>Yes</td>
                     </tr>
-                    <tr>
-                      <td>Diamond Total Weight (in carat)</td>
-                      <td>{{ product.metafields.custom.carat_ }}</td>
-                    </tr>
-                    <tr>
-                      <td>Stone Type</td>
-                      <td>{{ product.metafields.custom.stone_type }}</td>
-                    </tr>
-                    <tr>
-                      <td>Creation Method</td>
-                      <td>{{ product.metafields.custom.diamond_type }}</td>
-                    </tr>
-                    <tr>
-                      <td>Color</td>
-                      <td>{{ product.metafields.custom.color }}</td>
-                    </tr>
-                    <tr>
-                      <td>Color Hue</td>
-                      <td>{{ product.metafields.custom.color_hue }}</td>
-                    </tr>
-                    <tr>
-                      <td>Clarity</td>
-                      <td>{{ product.metafields.custom.diamond_clarity }}</td>
-                    </tr>
+                    {% if product.metafields.custom.carat_ %}
+                      <tr>
+                        <td>Diamond Total Weight (in carat)</td>
+                        <td>{{ product.metafields.custom.carat_ }}</td>
+                      </tr>
+                    {% endif %}
+                    {% if product.metafields.custom.stone_type %}
+                      <tr>
+                        <td>Stone Type</td>
+                        <td>{{ product.metafields.custom.stone_type }}</td>
+                      </tr>
+                    {% endif %}
+                    {% if product.metafields.custom.diamond_type %}
+                      <tr>
+                        <td>Creation Method</td>
+                        <td>{{ product.metafields.custom.diamond_type }}</td>
+                      </tr>
+                    {% endif %}
+                    {% if product.metafields.custom.color %}
+                      <tr>
+                        <td>Color</td>
+                        <td>{{ product.metafields.custom.color }}</td>
+                      </tr>
+                    {% endif %}
+                    {% if product.metafields.custom.color_hue %}
+                      <tr>
+                        <td>Color Hue</td>
+                        <td>{{ product.metafields.custom.color_hue }}</td>
+                      </tr>
+                    {% endif %}
+                    {% if product.metafields.custom.diamond_clarity %}
+                      <tr>
+                        <td>Clarity</td>
+                        <td>{{ product.metafields.custom.diamond_clarity }}</td>
+                      </tr>
+                    {% endif %}
                   </tbody>
                 </table>
               {% endif -%}
@@ -263,7 +279,6 @@
     {%- endfor -%}
   </div>
 </product-tab>
-
 <script src="{{ 'tabs.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'halo-faqs.js' | asset_url }}" defer="defer"></script>
 {% assign description_tab = section.blocks | where: 'type', 'description' %}
