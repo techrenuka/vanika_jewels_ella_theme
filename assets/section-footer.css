@@ -1,7 +1,7 @@
 .footer-block__item {
     display: inline-block;
     vertical-align: top;
-    width: var(--block-custom-width);
+    /* width: var(--block-custom-width); */
     padding-left: 15px;
     padding-right: 15px;
 }
