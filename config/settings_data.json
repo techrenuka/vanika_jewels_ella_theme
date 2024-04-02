@@ -132,7 +132,7 @@
     "show_review": true,
     "show_compare": false,
     "product_compare_type": "default",
-    "show_wishlist_card": false,
+    "show_wishlist_card": true,
     "show_quick_view": true,
     "product_quick_view_type": "icon",
     "group_quickview_wishlist": "right",
