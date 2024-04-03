@@ -128,6 +128,7 @@
             "show_size_chart": true,
             "size_chart_type": "custom_image",
             "size_chart_image_type": "jpg",
+            "size_chart_image": "shopify:\/\/shop_images\/VANIKA_JEWELS_SIZE_CHART.png",
             "show_compare_color": true,
             "show_compare_color_drop_drap": true,
             "compare_layout": "1"
