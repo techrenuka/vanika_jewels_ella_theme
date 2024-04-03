@@ -1,172 +1,269 @@
 {{ 'component-header-basic.css' | asset_url | stylesheet_tag }}
-<header class="header header-basic{% if section.settings.enable_transparent %} header-basic--transparent{% endif %}" style="--spacing-l-r: {{ section.settings.padding_full_width }}px; --bg-color: {% if section.settings.gradient != blank %}{{ section.settings.gradient }}{% else %}{{ section.settings.background }}{% endif %}; --p-top: {{ section.settings.padding_top }}px; --p-bottom: {{ section.settings.padding_bottom }}px">
-    <div class="container container-{{ section.settings.container }}">
-        <div class="header-basic__content">
-            {%- for block in section.blocks -%}
-                <div class="header-basic__item header-basic__item--{{ block.type }}">
-                    {%- case block.type -%}
-                        {%-  when 'conversion_group' -%}
-                            <div class="header-top--left header__language_currency clearfix" style="--la-cu-color: {{ block.settings.language_currency_color }}; --text-color: {{ block.settings.text_color }}">
-                                <div class="header-top-right-group header-language_currency">
-                                    {%- if block.settings.show_language_currency -%}
-                                        <div class="top-language-currency{% if settings.enable_currencies %} enable-currency{% endif %}">
-                                            {%- if settings.enable_multilang_shopify -%}
-                                                {% render 'halo-top-language' %}
-                                            {%- endif -%}
-                                            {%- if settings.enable_currencies -%}
-                                                {% render 'halo-top-currency' %}
-                                            {%- endif -%}
-                                        </div>
-                                    {%- endif -%}
-                                    {%- if block.settings.customer_service_text != blank -%}
-                                        <div class="customer-service-text">{{ block.settings.customer_service_text }}</div>
-                                    {%- endif -%}
-                                </div>
-                            </div>
-                        {%-  when 'logo' -%}
-                            <div class="header-top--center clearfix">
-                                <div class="header__logo" style="--logo-width: {% if block.settings.logo == blank %}auto; --logo-svg-width: {% endif %}{{ block.settings.logo_width }}px; --logo-font-size: {{ block.settings.logo_font_size }}px; --logo-font-weight: {{ block.settings.logo_font_weight }}; --logo-color: {{ block.settings.logo_color }}">
-                                    <div class="header__heading">
-                                        <a href="{{ routes.root_url }}" class="header__heading-link focus-inset">
-                                            {%- if block.settings.logo != blank -%}
-                                                {%- liquid 
-                                                    assign logo = block.settings.logo
-                                                    assign logo_width = block.settings.logo_width
-                                                    assign logo_height = logo_width | divided_by: logo.aspect_ratio | round
-                                                    assign logo_alt = logo.alt | default: shop.name | escape
-                                                -%}
-                                                {{ logo | image_url: width: 300 | image_tag:
-                                                    class: 'header__heading-logo motion-reduce',
-                                                    widths: '50, 100, 150, 200, 250, 300, 400, 500',
-                                                    height: logo_height,
-                                                    width: logo_width,
-                                                    alt: logo_alt
-                                                }}
-                                            {%- else -%}
-                                                <span class="h2 {{ block.settings.logo_text_transform }}">{% if block.settings.logo_text != blank %}{{ block.settings.logo_text }}{% else %}{{ shop.name }}{% endif %}</span>
-                                            {%- endif -%}
-                                        </a>
-                                        {%- if block.settings.enable_parallax -%}
-                                            <a href="{{ routes.root_url }}" class="header__heading-link focus-inset logo_parallax">
-                                                {%- if block.settings.logo_parallax != blank -%}
-                                                    {%- assign image_parallax = block.settings.logo_parallax -%}
-                                                    {%- assign image_size = block.settings.logo_width | append: 'x' -%}
-                                                    <img srcset="{{ image_parallax | img_url: image_size }}" src="{{ image_parallax | img_url: image_size }}" loading="lazy" class="header__heading-logo" alt="{{ image.alt | default: shop.name | escape }}">
-                                                {%- elsif block.settings.logo_text != blank -%}
-                                                    <span class="h2 {{ block.settings.logo_text_transform }}">{{ block.settings.logo_text }}</span>
-                                                {%- else -%}
-                                                    <span class="h2 {{ block.settings.logo_text_transform }}">{{ shop.name }}</span>
-                                                {%- endif -%}
-                                            </a>
-                                        {%- endif -%}
-                                    </div>
-                                </div>
-                            </div>
-                        {%-  when 'function_group' -%}
-                            <div class="header-top--right header__icons clearfix">
-                                {% if block.settings.show_search %}
-                                    <details-modal class="header__iconItem header__search" style="--search-color: {{ block.settings.search_color }}; --bg-search-color: {{ block.settings.bg_search_color }}; --search-icon-color: {{ block.settings.search_icon_color }}; --search-border-color: {{ block.settings.search_border_color }}">
-                                        {%- if settings.show_quick_search -%}
-                                            <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}" data-product-to-show="{{ settings.quick_search_to_show }}">
-                                        {%- endif -%}
-                                        <details class="search_details">
-                                            <summary class="header__search-full" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
-                                                <button type="button" class="header-search-close" aria-label="{{ 'general.common.close' | t }}">{% render 'icon-close' %}</button>
-                                                <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
-                                                    <div class="field">
-                                                        <input class="search__input field__input form-input-placeholder" id="Search-In-Modal-Basic" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.search' | t }}" autocomplete="off" {%- if settings.show_quick_search -%}role="combobox" aria-expanded="false" aria-owns="predictive-search-results-list" aria-controls="predictive-search-results-list" aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false"{%- endif -%}>
-                                                        <input type="hidden" name="options[prefix]" value="last">
-                                                        <input type="hidden" name="type" value="product">
-                                                        <label class="field__label hiddenLabels" for="Search-In-Modal-Basic">{{ 'general.search.search' | t }}</label>
-                                                        <button class="button search__button field__button focus-inset" aria-label="{{ 'general.search.search' | t }}">{% render 'icon-search-03' %}</button>
-                                                    </div>
-                                                    {%- if settings.show_quick_search -%}
-                                                        {%- if settings.show_search_trending or settings.show_search_product -%}
-                                                            {%- render 'quick-searching-trending-products', sectionId: 'basic-list-result' -%}
-                                                        {%- endif -%}
-                                                        {%- render 'predictive-search-results' -%}
-                                                    {%- endif -%}
-                                                </form>
-                                            </summary>
-                                            <div class="search-modal modal__content{% if settings.show_quick_search %} quickSearch{% endif %}" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
-                                                {%- if settings.show_quick_search -%}
-                                                    {% render 'halo-quick-search', sectionId: 'quick-basic-list-result' %}
-                                                {%- endif -%}
-                                            </div>
-                                        </details>
-                                        {%- if settings.show_quick_search -%}
-                                            </predictive-search>
-                                        {%- endif -%}
-                                    </details-modal>
-                                {% endif %}
-                                {% if block.settings.show_cart or block.settings.show_wishlist or block.settings.show_customer %}
-                                    <div class="header__iconItem header__group">
-                                        {%- if shop.customer_accounts_enabled and block.settings.show_customer -%}
-                                            {% if routes.account_login_url contains '/account/login' %}
-                                                {% assign is_contained = true %}
-                                            {% else %}
-                                                {% assign is_contained = false %}
-                                            {% endif %}
-                                            <div class="header__icon customer-links" style="--text-color: {{ block.settings.customer_color }}">
-                                                <a href="{{ routes.account_login_url }}" class="header__icon header__icon--account link link--text"{% if is_contained %} data-open-auth-sidebar{% endif %}>
-                                                    {% render 'icon-account-2' %}
-                                                    <span class="visually-hidden">
-                                                        {%- liquid
-                                                        if customer
-                                                        echo 'customer.account_fallback' | t
-                                                        else
-                                                        echo 'customer.log_in' | t
-                                                        endif
-                                                        -%}
-                                                    </span>
-                                                </a>                                    
-                                            </div>
-                                        {%- endif -%}
-                                        {%- if settings.show_wishlist and block.settings.show_wishlist -%}
-                                            <a href="{{ pages['wish-list'].url }}" class="header__icon header__icon--wishlist link link--text focus-inset" style="--text-color: {{ block.settings.wishlist_color }}">{% render 'icon-heart-2' %}</a>
-                                        {%- endif -%}
-                                        {%- if block.settings.show_cart -%}
-                                            <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset" id="cart-icon-bubble"{% if settings.show_quick_cart %} data-cart-sidebar{% endif %} style="--text-color: {{ block.settings.cart_color }}; --cart-bg-item: {{ block.settings.cart_bg_item }}; --cart-color-item: {{ block.settings.cart_color_item }}">
-                                                {% render 'icon-cart-03' %}
-                                                <div class="cart-count-bubble">
-                                                    {%- if cart.item_count < 100 -%}
-                                                        <span class="text" aria-hidden="true" data-cart-count>{{ cart.item_count }}</span>
-                                                    {%- endif -%}
-                                                    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-                                                </div>
-                                            </a>
-                                        {%- endif -%}
-                                    </div>
-                                {% endif %}
-                            </div>
-                    {%- endcase -%}
+<header
+  class="header header-basic{% if section.settings.enable_transparent %} header-basic--transparent{% endif %}"
+  style="--spacing-l-r: {{ section.settings.padding_full_width }}px; --bg-color: {% if section.settings.gradient != blank %}{{ section.settings.gradient }}{% else %}{{ section.settings.background }}{% endif %}; --p-top: {{ section.settings.padding_top }}px; --p-bottom: {{ section.settings.padding_bottom }}px"
+>
+  <div class="container container-{{ section.settings.container }}">
+    <div class="header-basic__content">
+      {%- for block in section.blocks -%}
+        <div class="header-basic__item header-basic__item--{{ block.type }}">
+          {%- case block.type -%}
+            {%- when 'conversion_group' -%}
+              <div
+                class="header-top--left header__language_currency clearfix"
+                style="--la-cu-color: {{ block.settings.language_currency_color }}; --text-color: {{ block.settings.text_color }}"
+              >
+                <div class="header-top-right-group header-language_currency">
+                  {%- if block.settings.show_language_currency -%}
+                    <div class="top-language-currency{% if settings.enable_currencies %} enable-currency{% endif %}">
+                      {%- if settings.enable_multilang_shopify -%}
+                        {% render 'halo-top-language' %}
+                      {%- endif -%}
+                      {%- if settings.enable_currencies -%}
+                        {% render 'halo-top-currency' %}
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.customer_service_text != blank -%}
+                    <div class="customer-service-text">{{ block.settings.customer_service_text }}</div>
+                  {%- endif -%}
                 </div>
-            {%- endfor -%}
+              </div>
+            {%- when 'logo' -%}
+              <div class="header-top--center clearfix">
+                <div
+                  class="header__logo"
+                  style="--logo-width: {% if block.settings.logo == blank %}auto; --logo-svg-width: {% endif %}{{ block.settings.logo_width }}px; --logo-font-size: {{ block.settings.logo_font_size }}px; --logo-font-weight: {{ block.settings.logo_font_weight }}; --logo-color: {{ block.settings.logo_color }}"
+                >
+                  <div class="header__heading">
+                    <a href="{{ routes.root_url }}" class="header__heading-link focus-inset">
+                      {%- if block.settings.logo != blank -%}
+                        {%- liquid
+                          assign logo = block.settings.logo
+                          assign logo_width = block.settings.logo_width
+                          assign logo_height = logo_width | divided_by: logo.aspect_ratio | round
+                          assign logo_alt = logo.alt | default: shop.name | escape
+                        -%}
+                        {{
+                          logo
+                          | image_url: width: 300
+                          | image_tag:
+                            class: 'header__heading-logo motion-reduce',
+                            widths: '50, 100, 150, 200, 250, 300, 400, 500',
+                            height: logo_height,
+                            width: logo_width,
+                            alt: logo_alt
+                        }}
+                      {%- else -%}
+                        <span class="h2 {{ block.settings.logo_text_transform }}">
+                          {%- if block.settings.logo_text != blank -%}
+                            {{- block.settings.logo_text -}}
+                          {%- else -%}
+                            {{- shop.name -}}
+                          {%- endif -%}
+                        </span>
+                      {%- endif -%}
+                    </a>
+                    {%- if block.settings.enable_parallax -%}
+                      <a href="{{ routes.root_url }}" class="header__heading-link focus-inset logo_parallax">
+                        {%- if block.settings.logo_parallax != blank -%}
+                          {%- assign image_parallax = block.settings.logo_parallax -%}
+                          {%- assign image_size = block.settings.logo_width | append: 'x' -%}
+                          <img
+                            srcset="{{ image_parallax | img_url: image_size }}"
+                            src="{{ image_parallax | img_url: image_size }}"
+                            loading="lazy"
+                            class="header__heading-logo"
+                            alt="{{ image.alt | default: shop.name | escape }}"
+                          >
+                        {%- elsif block.settings.logo_text != blank -%}
+                          <span class="h2 {{ block.settings.logo_text_transform }}">
+                            {{- block.settings.logo_text -}}
+                          </span>
+                        {%- else -%}
+                          <span class="h2 {{ block.settings.logo_text_transform }}">{{ shop.name }}</span>
+                        {%- endif -%}
+                      </a>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            {%- when 'function_group' -%}
+              <div class="header-top--right header__icons clearfix">
+                {% if block.settings.show_search %}
+                  <details-modal
+                    class="header__iconItem header__search"
+                    style="--search-color: {{ block.settings.search_color }}; --bg-search-color: {{ block.settings.bg_search_color }}; --search-icon-color: {{ block.settings.search_icon_color }}; --search-border-color: {{ block.settings.search_border_color }}"
+                  >
+                    {%- if settings.show_quick_search -%}
+                      <predictive-search
+                        class="search-modal__form"
+                        data-loading-text="{{ 'accessibility.loading' | t }}"
+                        data-product-to-show="{{ settings.quick_search_to_show }}"
+                      >
+                    {%- endif -%}
+                    <details class="search_details">
+                      <summary
+                        class="header__search-full"
+                        aria-haspopup="dialog"
+                        aria-label="{{ 'general.search.search' | t }}"
+                      >
+                        <button type="button" class="header-search-close" aria-label="{{ 'general.common.close' | t }}">
+                          {% render 'icon-close' %}
+                        </button>
+                        <form
+                          action="{{ routes.search_url }}"
+                          method="get"
+                          role="search"
+                          class="search search-modal__form"
+                        >
+                          <div class="field">
+                            <input
+                              class="search__input field__input form-input-placeholder"
+                              id="Search-In-Modal-Basic"
+                              type="search"
+                              name="q"
+                              value="{{ search.terms | escape }}"
+                              placeholder="{{ 'general.search.search' | t }}"
+                              autocomplete="off"
+                              {%- if settings.show_quick_search -%}
+                                role="combobox" aria-expanded="false" aria-owns="predictive-search-results-list"
+                                aria-controls="predictive-search-results-list" aria-haspopup="listbox"
+                                aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off"
+                                spellcheck="false"
+                              {%- endif -%}
+                            >
+                            <input type="hidden" name="options[prefix]" value="last">
+                            <input type="hidden" name="type" value="product">
+                            <label class="field__label hiddenLabels" for="Search-In-Modal-Basic">
+                              {{- 'general.search.search' | t -}}
+                            </label>
+                            <button
+                              class="button search__button field__button focus-inset"
+                              aria-label="{{ 'general.search.search' | t }}"
+                            >
+                              {% render 'icon-search-03' %}
+                            </button>
+                          </div>
+                          {%- if settings.show_quick_search -%}
+                            {%- if settings.show_search_trending or settings.show_search_product -%}
+                              {%- render 'quick-searching-trending-products', sectionId: 'basic-list-result' -%}
+                            {%- endif -%}
+                            {%- render 'predictive-search-results' -%}
+                          {%- endif -%}
+                        </form>
+                      </summary>
+                      <div
+                        class="search-modal modal__content{% if settings.show_quick_search %} quickSearch{% endif %}"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="{{ 'general.search.search' | t }}"
+                      >
+                        {%- if settings.show_quick_search -%}
+                          {% render 'halo-quick-search', sectionId: 'quick-basic-list-result' %}
+                        {%- endif -%}
+                      </div>
+                    </details>
+                    {%- if settings.show_quick_search -%}
+                      </predictive-search>
+                    {%- endif -%}
+                  </details-modal>
+                {% endif %}
+                {% if block.settings.show_cart or block.settings.show_wishlist or block.settings.show_customer %}
+                  <div class="header__iconItem header__group">
+                    {%- if shop.customer_accounts_enabled and block.settings.show_customer -%}
+                      {% if routes.account_login_url contains '/account/login' %}
+                        {% assign is_contained = true %}
+                      {% else %}
+                        {% assign is_contained = false %}
+                      {% endif %}
+                      <div
+                        class="header__icon customer-links"
+                        style="--text-color: {{ block.settings.customer_color }}"
+                      >
+                        <a
+                          href="{{ routes.account_login_url }}"
+                          class="header__icon header__icon--account link link--text"
+                          {% if is_contained %}
+                            data-open-auth-sidebar
+                          {% endif %}
+                        >
+                          {% render 'icon-account-2' %}
+                          <span class="visually-hidden">
+                            {%- liquid
+                              if customer
+                                echo 'customer.account_fallback' | t
+                              else
+                                echo 'customer.log_in' | t
+                              endif
+                            -%}
+                          </span>
+                        </a>
+                      </div>
+                    {%- endif -%}
+                    {% if customer %}
+                      {%- if settings.show_wishlist and block.settings.show_wishlist -%}
+                        <a
+                          href="{{ pages['wish-list'].url }}"
+                          class="header__icon header__icon--wishlist link link--text focus-inset"
+                          style="--text-color: {{ block.settings.wishlist_color }}"
+                        >
+                          {%- render 'icon-heart-2' -%}
+                        </a>
+                      {%- endif -%}
+                    {%- endif -%}
+                    {%- if block.settings.show_cart -%}
+                      <a
+                        href="{{ routes.cart_url }}"
+                        class="header__icon header__icon--cart link link--text focus-inset"
+                        id="cart-icon-bubble"
+                        {% if settings.show_quick_cart %}
+                          data-cart-sidebar
+                        {% endif %}
+                        style="--text-color: {{ block.settings.cart_color }}; --cart-bg-item: {{ block.settings.cart_bg_item }}; --cart-color-item: {{ block.settings.cart_color_item }}"
+                      >
+                        {% render 'icon-cart-03' %}
+                        <div class="cart-count-bubble">
+                          {%- if cart.item_count < 100 -%}
+                            <span class="text" aria-hidden="true" data-cart-count>{{ cart.item_count }}</span>
+                          {%- endif -%}
+                          <span class="visually-hidden">
+                            {{- 'sections.header.cart_count' | t: count: cart.item_count -}}
+                          </span>
+                        </div>
+                      </a>
+                    {%- endif -%}
+                  </div>
+                {% endif %}
+              </div>
+          {%- endcase -%}
         </div>
+      {%- endfor -%}
     </div>
+  </div>
 </header>
-<script defer> 
-    var appendPrependMenuMobile = function() {
-        if (window.innerWidth < 1025) {
-            $('.header-top--wrapper .header-top--left .customer-service-text').appendTo('#navigation-mobile .site-nav-mobile.nav-account .wrapper-links');
-        } else {
-            $('#navigation-mobile .site-nav-mobile.nav-account .customer-service-text').appendTo('.header-top--wrapper .header-top--left .header-language_currency');
-        };
-    };
+<script defer>
+  var appendPrependMenuMobile = function() {
+      if (window.innerWidth < 1025) {
+          $('.header-top--wrapper .header-top--left .customer-service-text').appendTo('#navigation-mobile .site-nav-mobile.nav-account .wrapper-links');
+      } else {
+          $('#navigation-mobile .site-nav-mobile.nav-account .customer-service-text').appendTo('.header-top--wrapper .header-top--left .header-language_currency');
+      };
+  };
 
-    $(document).ready(function() {
-        appendPrependMenuMobile();
-    });
+  $(document).ready(function() {
+      appendPrependMenuMobile();
+  });
 
-    $(window).on('resize', function () {
-        appendPrependMenuMobile();
-    })
+  $(window).on('resize', function () {
+      appendPrependMenuMobile();
+  })
 
-    $(window).on('load', function () {
-        $('.header-05').addClass('loading-css');
-    });
-    
-    if ($('body').hasClass('template-index')) $('.header-basic--transparent').closest('.section-header-basic').addClass('shb-transparent');
+  $(window).on('load', function () {
+      $('.header-05').addClass('loading-css');
+  });
+
+  if ($('body').hasClass('template-index')) $('.header-basic--transparent').closest('.section-header-basic').addClass('shb-transparent');
 </script>
 
 {% schema %}
