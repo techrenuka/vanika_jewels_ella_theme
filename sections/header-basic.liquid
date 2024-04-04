@@ -169,6 +169,7 @@
                     {%- endif -%}
                   </details-modal>
                 {% endif %}
+
                 {% if block.settings.show_cart or block.settings.show_wishlist or block.settings.show_customer %}
                   <div class="header__iconItem header__group">
                     {%- if shop.customer_accounts_enabled and block.settings.show_customer -%}
@@ -201,7 +202,7 @@
                         </a>
                       </div>
                     {%- endif -%}
-                    <!-- {% if customer %} -->
+
                     {%- if settings.show_wishlist and block.settings.show_wishlist -%}
                       <a
                         href="{{ pages['wish-list'].url }}"
@@ -211,7 +212,7 @@
                         {%- render 'icon-heart-2' -%}
                       </a>
                     {%- endif -%}
-                    <!-- {%- endif -%} -->
+
                     {%- if block.settings.show_cart -%}
                       <a
                         href="{{ routes.cart_url }}"
