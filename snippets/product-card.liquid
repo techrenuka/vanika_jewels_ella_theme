@@ -120,7 +120,6 @@
         </div>
 
         {%- if product_action_group -%}
-          <!-- {% if customer %} -->
           <div class="card-product__group group-{{ settings.group_quickview_wishlist }}">
             {%- if show_wishlist -%}
               <div class="card-product__group-item card-wishlist">
@@ -136,7 +135,7 @@
                 </button>
               </div>
             {%- endif -%}
-            <!-- {%- endif -%} -->
+
             {%- if show_quick_view -%}
               <div class="card-product__group-item card-quickview card-quickviewIcon{% if settings.show_quick_view_mb %} show-mb{% endif %}{% if settings.product_quick_view_type == 'default' %} default{% endif %}">
                 <button
