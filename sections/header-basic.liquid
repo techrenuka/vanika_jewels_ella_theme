@@ -201,17 +201,17 @@
                         </a>
                       </div>
                     {%- endif -%}
-                    {% if customer %}
-                      {%- if settings.show_wishlist and block.settings.show_wishlist -%}
-                        <a
-                          href="{{ pages['wish-list'].url }}"
-                          class="header__icon header__icon--wishlist link link--text focus-inset"
-                          style="--text-color: {{ block.settings.wishlist_color }}"
-                        >
-                          {%- render 'icon-heart-2' -%}
-                        </a>
-                      {%- endif -%}
+                    <!-- {% if customer %} -->
+                    {%- if settings.show_wishlist and block.settings.show_wishlist -%}
+                      <a
+                        href="{{ pages['wish-list'].url }}"
+                        class="header__icon header__icon--wishlist link link--text focus-inset"
+                        style="--text-color: {{ block.settings.wishlist_color }}"
+                      >
+                        {%- render 'icon-heart-2' -%}
+                      </a>
                     {%- endif -%}
+                    <!-- {%- endif -%} -->
                     {%- if block.settings.show_cart -%}
                       <a
                         href="{{ routes.cart_url }}"
