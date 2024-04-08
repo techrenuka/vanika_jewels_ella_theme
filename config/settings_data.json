@@ -880,7 +880,7 @@
       ".shopify-policy__container {margin: 0; max-width: 100% !important; padding: 5rem 7rem 5rem 7rem; text-size: 2rem;}",
       ".shopify-policy__title h1 {display: none;}",
       ".contact-container {display: none;}",
-      ".halo-ask-an-expert-banner {max-width: 8rem; border-radius: 25%; bottom: 23px; right: 23px;}",
+      ".halo-ask-an-expert-banner {max-width: 8rem; border-radius: 25%; bottom: 23px; left: 23px;}",
       ".card-information .card-information__wrapper .card-title {height: 47px;}",
       ".card-information .card-swatch {display: none;}",
       ".desc {display: none;}",
