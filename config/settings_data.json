@@ -857,14 +857,30 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "button_color": "#ffd6db",
+          "secondary_color": "#000000",
+          "ternary_color": "#6A6A6A",
+          "button_icon": "chat_bubble",
+          "button_text": "live_chat",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": ""
+        }
+      }
+    }
   },
   "platform_customizations": {
     "custom_css": [
       ".shopify-policy__container {margin: 0; max-width: 100% !important; padding: 5rem 7rem 5rem 7rem; text-size: 2rem;}",
       ".shopify-policy__title h1 {display: none;}",
       ".contact-container {display: none;}",
-      ".halo-ask-an-expert-banner {max-width: 8rem; border-radius: 25%; bottom: 65px; right: 13px;}",
+      ".halo-ask-an-expert-banner {max-width: 8rem; border-radius: 25%; bottom: 23px; right: 23px;}",
       ".card-information .card-information__wrapper .card-title {height: 47px;}",
       ".card-information .card-swatch {display: none;}",
       ".desc {display: none;}",
