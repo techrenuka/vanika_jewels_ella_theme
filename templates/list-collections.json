@@ -80,6 +80,7 @@
           "type": "collection",
           "settings": {
             "collection": "bracelet",
+            "image": "shopify:\/\/shop_images\/370x370_Bracelet.png",
             "display_countdown": false,
             "title": "Bracelet Collection",
             "title_font_size": 20,
