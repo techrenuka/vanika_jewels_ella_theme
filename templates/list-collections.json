@@ -77,6 +77,43 @@
             "text_time_color": "#000000"
           }
         },
+        "f070a123-bf0f-4981-9d37-ce9bd31a7803": {
+          "type": "collection",
+          "settings": {
+            "collection": "pendant",
+            "image": "shopify:\/\/shop_images\/370x370_Pendant.png",
+            "display_countdown": false,
+            "title": "Pendant Collection",
+            "title_font_size": 16,
+            "title_font_size_mb": 16,
+            "title_font_weight": "800",
+            "mg_bottom_title": 15,
+            "title_color": "#808080",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "des_font_size": 12,
+            "des_font_size_mb": 12,
+            "des_font_weight": "400",
+            "mg_bottom_des": 15,
+            "text_color": "#000000",
+            "countdown": "2022\/10\/10 0:0:00",
+            "item_countdown_width": 64,
+            "item_countdown_height": 64,
+            "item_countdown_gap": 7,
+            "item_countdown_radius": 50,
+            "border_color": "#ffffff",
+            "countdown_background": "",
+            "countdown_background_gradient": "",
+            "opacity_background": 0.8,
+            "num_font_size": 12,
+            "num_font_size_mb": 12,
+            "num_font_weight": "400",
+            "num_color": "#000000",
+            "text_time_font_size": 12,
+            "text_time_font_size_mb": 12,
+            "text_time_font_weight": "400",
+            "text_time_color": "#000000"
+          }
+        },
         "558d2588-e481-4e7f-a059-1cabaa2a9507": {
           "type": "collection",
           "settings": {
@@ -114,13 +151,13 @@
             "text_time_color": "#ffffff"
           }
         },
-        "f070a123-bf0f-4981-9d37-ce9bd31a7803": {
+        "24cb80b7-942d-489f-841a-fa3c813bc800": {
           "type": "collection",
           "settings": {
-            "collection": "pendant",
-            "image": "shopify:\/\/shop_images\/370x370_Pendant.png",
+            "collection": "wedding-collection",
+            "image": "shopify:\/\/shop_images\/370x370_Wedding.png",
             "display_countdown": false,
-            "title": "Pendant Collection",
+            "title": "Wedding Collection",
             "title_font_size": 16,
             "title_font_size_mb": 16,
             "title_font_weight": "800",
@@ -132,7 +169,7 @@
             "des_font_weight": "400",
             "mg_bottom_des": 15,
             "text_color": "#000000",
-            "countdown": "2022\/10\/10 0:0:00",
+            "countdown": "2020\/01\/7 0:0:00",
             "item_countdown_width": 64,
             "item_countdown_height": 64,
             "item_countdown_gap": 7,
@@ -188,13 +225,13 @@
             "text_time_color": "#000000"
           }
         },
-        "24cb80b7-942d-489f-841a-fa3c813bc800": {
+        "3caf9594-d59f-4fcb-aa49-ca70fc027cc9": {
           "type": "collection",
           "settings": {
-            "collection": "wedding-collection",
-            "image": "shopify:\/\/shop_images\/370x370_Wedding.png",
+            "collection": "gift-collection",
+            "image": "shopify:\/\/shop_images\/370x370_Gift.png",
             "display_countdown": false,
-            "title": "Wedding Collection",
+            "title": "Gift Collection",
             "title_font_size": 16,
             "title_font_size_mb": 16,
             "title_font_weight": "800",
@@ -232,43 +269,6 @@
             "image": "shopify:\/\/shop_images\/370x370_Exclusive.png",
             "display_countdown": false,
             "title": "Exclusive Collection",
-            "title_font_size": 16,
-            "title_font_size_mb": 16,
-            "title_font_weight": "800",
-            "mg_bottom_title": 15,
-            "title_color": "#808080",
-            "des": "Sale up to 60% off on selected items. End ins:",
-            "des_font_size": 12,
-            "des_font_size_mb": 12,
-            "des_font_weight": "400",
-            "mg_bottom_des": 15,
-            "text_color": "#000000",
-            "countdown": "2020\/01\/7 0:0:00",
-            "item_countdown_width": 64,
-            "item_countdown_height": 64,
-            "item_countdown_gap": 7,
-            "item_countdown_radius": 50,
-            "border_color": "#ffffff",
-            "countdown_background": "",
-            "countdown_background_gradient": "",
-            "opacity_background": 0.8,
-            "num_font_size": 12,
-            "num_font_size_mb": 12,
-            "num_font_weight": "400",
-            "num_color": "#000000",
-            "text_time_font_size": 12,
-            "text_time_font_size_mb": 12,
-            "text_time_font_weight": "400",
-            "text_time_color": "#000000"
-          }
-        },
-        "3caf9594-d59f-4fcb-aa49-ca70fc027cc9": {
-          "type": "collection",
-          "settings": {
-            "collection": "gift-collection",
-            "image": "shopify:\/\/shop_images\/370x370_Gift.png",
-            "display_countdown": false,
-            "title": "Gift Collection",
             "title_font_size": 16,
             "title_font_size_mb": 16,
             "title_font_weight": "800",
@@ -344,12 +344,12 @@
       "block_order": [
         "040b56d3-2b31-437e-87e0-9f75db59fdba",
         "d8a2e0b1-4f99-48fa-af54-1e2c3f7f1516",
-        "558d2588-e481-4e7f-a059-1cabaa2a9507",
         "f070a123-bf0f-4981-9d37-ce9bd31a7803",
-        "88f0d701-4b2c-4f6e-9f19-af4107c5cc44",
+        "558d2588-e481-4e7f-a059-1cabaa2a9507",
         "24cb80b7-942d-489f-841a-fa3c813bc800",
-        "cf5e4c28-6aa0-46c3-b6da-ad8bce3aa8fd",
+        "88f0d701-4b2c-4f6e-9f19-af4107c5cc44",
         "3caf9594-d59f-4fcb-aa49-ca70fc027cc9",
+        "cf5e4c28-6aa0-46c3-b6da-ad8bce3aa8fd",
         "2652c60c-835e-4f72-a7e8-05558d33a286",
         "0f331a33-2e64-4e1d-b681-ae29a13536ea",
         "83cd34d4-6810-4c3f-b36e-e6123e267eae",
