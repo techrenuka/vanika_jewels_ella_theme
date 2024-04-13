@@ -6,7 +6,8 @@
         "collection_LgCjRb": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "new-ring",
+            "image": "shopify:\/\/shop_images\/370x370_Ring.png",
             "display_countdown": false,
             "title": "Ring Collection",
             "title_font_size": 16,
@@ -25,7 +26,7 @@
             "item_countdown_height": 64,
             "item_countdown_gap": 7,
             "item_countdown_radius": 50,
-            "border_color": "#fff",
+            "border_color": "#ffffff",
             "countdown_background": "",
             "countdown_background_gradient": "",
             "opacity_background": 0.8,
@@ -61,7 +62,7 @@
             "item_countdown_height": 64,
             "item_countdown_gap": 7,
             "item_countdown_radius": 50,
-            "border_color": "#fff",
+            "border_color": "#ffffff",
             "countdown_background": "",
             "countdown_background_gradient": "",
             "opacity_background": 0.8,
