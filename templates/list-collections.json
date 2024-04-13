@@ -80,7 +80,8 @@
         "collection_GnRBMQ": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "watch",
+            "image": "shopify:\/\/shop_images\/370x370_Watch.png",
             "display_countdown": false,
             "title": "Watch Collection",
             "title_font_size": 16,
