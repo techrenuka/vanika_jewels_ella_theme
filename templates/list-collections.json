@@ -154,6 +154,7 @@
           "type": "collection",
           "settings": {
             "collection": "pendant",
+            "image": "shopify:\/\/shop_images\/370x370_Pendant.png",
             "display_countdown": false,
             "title": "Pendant Collection",
             "title_font_size": 16,
