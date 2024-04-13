@@ -190,9 +190,9 @@
         "24cb80b7-942d-489f-841a-fa3c813bc800": {
           "type": "collection",
           "settings": {
-            "collection": "metropolis",
+            "collection": "wedding-collection",
             "display_countdown": false,
-            "title": "Special Offers",
+            "title": "Wedding Collection",
             "title_font_size": 16,
             "title_font_size_mb": 16,
             "title_font_weight": "800",
@@ -226,9 +226,9 @@
         "cf5e4c28-6aa0-46c3-b6da-ad8bce3aa8fd": {
           "type": "collection",
           "settings": {
-            "collection": "valkyrio",
+            "collection": "exclusive-collection",
             "display_countdown": false,
-            "title": "Special Offers",
+            "title": "Exclusive Collection",
             "title_font_size": 16,
             "title_font_size_mb": 16,
             "title_font_weight": "800",
@@ -262,9 +262,9 @@
         "3caf9594-d59f-4fcb-aa49-ca70fc027cc9": {
           "type": "collection",
           "settings": {
-            "collection": "scarvero",
+            "collection": "gift-collection",
             "display_countdown": false,
-            "title": "Special Offers",
+            "title": "Gift Collection",
             "title_font_size": 16,
             "title_font_size_mb": 16,
             "title_font_weight": "800",
