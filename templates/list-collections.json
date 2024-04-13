@@ -425,7 +425,7 @@
         "bg_color": "#ffffff",
         "bg_color_gradient": "",
         "title_font_size": 17,
-        "title_font_size_mb": 16,
+        "title_font_size_mb": 13,
         "title_font_weight": "800",
         "title_text_transform": "uppercase",
         "mg_bottom_title": 10,
