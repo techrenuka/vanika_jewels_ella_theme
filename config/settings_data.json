@@ -3,6 +3,7 @@
     "layout_body": "default",
     "mobile_menu": "default",
     "collection_layout": "default",
+    "list_collections_layout": "collections_4",
     "product_page_layout": "default",
     "type_font_1": "google_fonts",
     "type_font_1_name": "Poppins",
