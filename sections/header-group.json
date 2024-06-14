@@ -52,7 +52,7 @@
         "conversion_group_MgxNxw": {
           "type": "conversion_group",
           "settings": {
-            "show_language_currency": true,
+            "show_language_currency": false,
             "language_currency_color": "#3c3c3c",
             "customer_service_text": "",
             "text_color": "#3c3c3c"
