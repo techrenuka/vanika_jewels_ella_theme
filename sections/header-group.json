@@ -54,7 +54,7 @@
           "settings": {
             "show_language_currency": true,
             "language_currency_color": "#3c3c3c",
-            "customer_service_text": "<p>Customer Service <a href=\"https:\/\/wa.me\/message\/JX6KUQNTVUZ2C1\" target=\"_blank\" title=\"https:\/\/wa.me\/message\/JX6KUQNTVUZ2C1\">+91-73591-81221<\/a><\/p>",
+            "customer_service_text": "",
             "text_color": "#3c3c3c"
           }
         },
