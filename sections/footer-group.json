@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "type": "footer",
   "name": "Footer Group",
@@ -15,9 +24,9 @@
             "address_icon": "point_icon",
             "show_address_icon": true,
             "address_text": "<p><strong>VANIKA JEWELS<br\/><\/strong>39 Greenbay Road, <\/p><p>London, SE7 8PR, <\/p><p>United Kingdom<\/p>",
-            "phone_icon": "message_icon",
+            "phone_icon": "phone_icon",
             "show_phone_icon": true,
-            "phone_text": "<p>8866555218<\/p>",
+            "phone_text": "<p>+44-7933997624<\/p>",
             "email_icon": "envelope_icon",
             "show_email_icon": true,
             "email_text": "<p>contact@vanikajewels.com<\/p><p>Mon-Sun : 8:00AM to 8:00PM<\/p>",
