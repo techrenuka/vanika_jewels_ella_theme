@@ -1,50 +1,81 @@
 {%- if section.settings.display_section -%}
-{{ 'component-toolbar-mobile.css' | asset_url | stylesheet_tag }}
-<div class="halo-sticky-toolbar-mobile">
+  {{ 'component-toolbar-mobile.css' | asset_url | stylesheet_tag }}
+  <div class="halo-sticky-toolbar-mobile">
     <div class="bottom-bar">
-        <ul class="bottom-bar--list">
-            {%- liquid 
-                assign font_size = section.settings.font_size | append: 'px'
-                assign font_weight = section.settings.font_weight
-                assign icon_size = section.settings.icon_size | append: 'px'
-            -%}
+      <ul class="bottom-bar--list">
+        {%- liquid
+          assign font_size = section.settings.font_size | append: 'px'
+          assign font_weight = section.settings.font_weight
+          assign icon_size = section.settings.icon_size | append: 'px'
+        -%}
 
-            {%- for block in section.blocks -%}
-                {%- liquid
-                    assign icon = block.settings.icon
-                    assign text = block.settings.text
-                    assign action_icon = block.settings.action_to
-                    if block.type == 'link'
-                        assign link = block.settings.link
-                    else
-                        assign link = blank
-                    endif
-                -%}
-                {%- if icon != blank or text != blank -%}
-                    <li class="list-item" style="--font-size: {{ font_size }}; --font-weight: {{ font_weight }}; --icon-size: {{ icon_size }}">
-                        <a {% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} {% if block.type == 'content' %}data-bar-{{block.type}}{% elsif block.type == 'action' %}{% if action_icon == 'cart' %}data-cart-sidebar{% elsif action_icon == 'search' %}data-search-mobile{% elsif action_icon == 'account' %}data-open-auth-sidebar{% endif %}{% endif %}><span class="icon">{{icon}}</span> <span class="text">{{text}}</span>
-                            {%- if action_icon == 'cart' -%}
-                                <div class="cart-count-bubble" style="--color-bubble: {{ section.settings.bg_color }}; --bg-bubble: {{ section.settings.color_icon }}">
-                                    {%- if cart.item_count < 100 -%}
-                                        <span class="text" aria-hidden="true" data-cart-count>{{ cart.item_count }}</span>
-                                    {%- endif -%}
-                                    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-                                </div>
-                            {%- endif -%}
-                        </a>
-                        {%- if block.type == 'content' -%}
-                            <div class="block-content bottom-bar--content" id="{{ block.id }}">
-                                <button type="button" class="bottom-bar--close halo-sidebar-close clearfix" data-close-content-sidebar aria-label="{{ 'general.common.close' | t }}">{% render 'icon-close' %}{{ 'general.common.close' | t }}</button>
-                                <div class="rte">{{ block.settings.content }}</div>
-                            </div>
-                        {% endif %}
-                    </li>
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign icon = block.settings.icon
+            assign text = block.settings.text
+            assign action_icon = block.settings.action_to
+            if block.type == 'link'
+              assign link = block.settings.link
+            else
+              assign link = blank
+            endif
+          -%}
+          {%- if icon != blank or text != blank -%}
+            <li
+              class="list-item"
+              style="--font-size: {{ font_size }}; --font-weight: {{ font_weight }}; --icon-size: {{ icon_size }}"
+            >
+              <a
+                {% if link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ link }}"
+                {% endif %}
+                {% if block.type == 'content' %}
+                  data-bar-{{ block.type }}
+                {% elsif block.type == 'action' %}
+                  {%- if action_icon == 'cart' -%}
+                    data-cart-sidebar
+                  {%- elsif action_icon == 'search' -%}
+                    data-search-mobile
+                  {%- elsif action_icon == 'account' -%}
+                    data-open-auth-sidebar
+                  {%- endif -%}
+                {% endif %}
+                ><span class="icon">{{ icon }}</span> <span class="text">{{ text }}</span>
+                {%- if action_icon == 'cart' -%}
+                  <div
+                    class="cart-count-bubble"
+                    style="--color-bubble: {{ section.settings.bg_color }}; --bg-bubble: {{ section.settings.color_icon }}"
+                  >
+                    {%- if cart.item_count < 100 -%}
+                      <span class="text" aria-hidden="true" data-cart-count>{{ cart.item_count }}</span>
+                    {%- endif -%}
+                    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                  </div>
                 {%- endif -%}
-            {%- endfor -%}
-        </ul>
+              </a>
+              {%- if block.type == 'content' -%}
+                <div class="block-content bottom-bar--content" id="{{ block.id }}">
+                  <button
+                    type="button"
+                    class="bottom-bar--close halo-sidebar-close clearfix"
+                    data-close-content-sidebar
+                    aria-label="{{ 'general.common.close' | t }}"
+                  >
+                    {% render 'icon-close' -%}
+                    {{- 'general.common.close' | t }}
+                  </button>
+                  <div class="rte">{{ block.settings.content }}</div>
+                </div>
+              {% endif %}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
     </div>
-</div>
-<style>
+  </div>
+  <style>
     {%- liquid
         assign color_icon = section.settings.color_icon
         assign bg_color = section.settings.bg_color
@@ -54,8 +85,8 @@
     .halo-sticky-toolbar-mobile {background: {% if bg_color_gradient != blank %}{{bg_color_gradient}}{% else %}{{bg_color}}{% endif %};border: 1px solid {{border_color}}}
     .halo-sticky-toolbar-mobile span {color: {{color_icon}}}
     .halo-sticky-toolbar-mobile span.icon svg {fill: {{color_icon}}}
-</style>
-<script>
+  </style>
+  <script>
     const buttons = document.querySelectorAll('[data-bar-content]');
     if (buttons.length) {
         buttons.forEach((button) => {
@@ -77,7 +108,7 @@
         })
     }
     $('body').addClass('sticky-toolbar-mobile');
-</script>
+  </script>
 {%- endif -%}
 
 {% schema %}
@@ -155,7 +186,7 @@
         "type" : "color",
         "id" : "color_icon",
         "label": "t:sections.sticky_toolbar_mobile.settings.color_icon",
-        "default" : "#232323"
+        "default" : "#000000"
     },
     {
         "type" : "color",
