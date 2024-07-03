@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -73,6 +82,11 @@
             "fontsize_text": 18,
             "spacing_top": 0,
             "spacing_bottom": 17
+          }
+        },
+        "judge_me_reviews_preview_badge_YcmWEk": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
           }
         },
         "5d8b9ff9-6a1c-4850-a6c2-e6cdbb8b7f7c": {
@@ -322,6 +336,7 @@
         "4036f89b-c2c5-49a4-9d6b-2fd29ce7c46c",
         "4e59f24a-8859-4579-a80a-d70e6f1bf66b",
         "4f95b592-8369-4ab0-b30d-24e463fb6890",
+        "judge_me_reviews_preview_badge_YcmWEk",
         "5d8b9ff9-6a1c-4850-a6c2-e6cdbb8b7f7c",
         "bd3a641e-98d0-4da1-ab57-d5e4b0391995",
         "d98e243b-3682-495a-965a-1c7f7d460880",
@@ -793,6 +808,22 @@
         "enable_dots": false,
         "enable_autoplay": false
       }
+    },
+    "17200043805fd750d0": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_3VbWUK": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_3VbWUK"
+      ],
+      "settings": {
+        "include_margins": false
+      }
     }
   },
   "order": [
@@ -800,6 +831,7 @@
     "product-recommendations",
     "product-recently-viewed",
     "0111b221-449b-4223-b585-619bf909becc",
-    "6fa9ad8c-45e4-45b3-b4f1-529a43f15335"
+    "6fa9ad8c-45e4-45b3-b4f1-529a43f15335",
+    "17200043805fd750d0"
   ]
 }
