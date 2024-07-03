@@ -822,7 +822,7 @@
         "judge_me_reviews_review_widget_3VbWUK"
       ],
       "custom_css": [
-
+        ".jdgm--done-setup-widget {margin-left: 15%; margin-right: 15%;}"
       ],
       "settings": {
         "include_margins": true
