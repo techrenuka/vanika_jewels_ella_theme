@@ -20,7 +20,7 @@
       "disabled": true,
       "settings": {
         "container": "container",
-        "padding_full_width": 0,
+        "padding_full_width": 50,
         "mg_top_desktop": 50,
         "mg_top_tablet": 50,
         "mg_top_mobile": 50,
