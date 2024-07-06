@@ -230,13 +230,8 @@
 
         {%- if settings.show_review -%}
           <div class="card-review clearfix halo-productReview">
-            <span class="shopify-product-reviews-badge" data-id="{{ product_card_product.id }}"></span>
+            <span class="shopify-product-reviews-badge" data-id="{{ product_card_product.id }}">{{ card_product.metafields.judgeme.badge }}</span>
           </div>
-           <!-- Start of Judge.me code -->
-        <div class='jdgm-widget jdgm-preview-badge'>
-          {{ card_product.metafields.judgeme.badge }}
-        </div>
-        <!-- End of Judge.me code -->
         {%- endif -%}
 
         {% render 'product-card-summary', product: product_card_product, class: 'card-list__hidden' %}
