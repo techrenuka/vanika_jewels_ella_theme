@@ -1505,19 +1505,20 @@
         "image_rotating_text_tdJne8": {
           "type": "image_rotating_text",
           "settings": {
+            "image": "shopify:\/\/shop_images\/SUPER_SALE.jpg",
             "link": "",
             "image_behavior": "none",
-            "rotating_text": "clearance sale  .  up to 50% off  .  clearance sale  .  up to 50% off  .",
+            "rotating_text": "Buy this Watch, Get $400 Off on Super Sale!",
             "rotating_text_color": "#ffffff",
-            "letter_spacing": 1,
+            "letter_spacing": 2,
             "position": "right"
           }
         },
         "product_98JJmQ": {
           "type": "product",
           "settings": {
-            "layout": "slider",
-            "title": "FEATURED PRODUCTS",
+            "layout": "grid",
+            "title": "SUPER SALE",
             "collection": "super-sale",
             "limit": 7,
             "product_counter_number": false
@@ -1528,7 +1529,6 @@
         "image_rotating_text_tdJne8",
         "product_98JJmQ"
       ],
-      "disabled": true,
       "settings": {
         "container": "1170",
         "padding_top": 0,
