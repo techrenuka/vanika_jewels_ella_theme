@@ -1528,6 +1528,7 @@
         "image_rotating_text_tdJne8",
         "product_98JJmQ"
       ],
+      "disabled": true,
       "settings": {
         "container": "1170",
         "padding_top": 0,
