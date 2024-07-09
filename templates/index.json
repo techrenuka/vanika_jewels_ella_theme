@@ -1498,6 +1498,41 @@
       "settings": {
         "include_margins": false
       }
+    },
+    "special_banner_mTPP9y": {
+      "type": "special-banner",
+      "blocks": {
+        "image_rotating_text_tdJne8": {
+          "type": "image_rotating_text",
+          "settings": {
+            "link": "",
+            "image_behavior": "none",
+            "rotating_text": "clearance sale  .  up to 50% off  .  clearance sale  .  up to 50% off  .",
+            "rotating_text_color": "#ffffff",
+            "letter_spacing": 1,
+            "position": "right"
+          }
+        },
+        "product_98JJmQ": {
+          "type": "product",
+          "settings": {
+            "layout": "slider",
+            "title": "FEATURED PRODUCTS",
+            "collection": "super-sale",
+            "limit": 7,
+            "product_counter_number": false
+          }
+        }
+      },
+      "block_order": [
+        "image_rotating_text_tdJne8",
+        "product_98JJmQ"
+      ],
+      "settings": {
+        "container": "1920",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -1511,6 +1546,7 @@
     "1720008098809d8e37",
     "16393870238958f868",
     "16378128152fdd5fe7",
-    "172017113127aca936"
+    "172017113127aca936",
+    "special_banner_mTPP9y"
   ]
 }
