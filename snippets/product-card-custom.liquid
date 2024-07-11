@@ -54,7 +54,13 @@
                 </a>
                 {%- if settings.show_review -%}
                     <div class="card-review clearfix halo-productReview">
-                        <span class="shopify-product-reviews-badge" data-id="{{ product_card_product.id }}"></span>
+                        <span class="shopify-product-reviews-badge" data-id="{{ product_card_product.id }}">
+                          <!-- Start of Judge.me code -->
+                            <div class='jdgm-widget jdgm-preview-badge'>
+                              {{ card_product.metafields.judgeme.badge }}
+                            </div>
+                          <!-- End of Judge.me code -->
+                          </span>
                     </div>
                 {%- endif -%}
                 <div class="card-price">
